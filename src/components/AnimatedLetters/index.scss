@@ -1,0 +1,64 @@
+@use "sass:math";
+
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn 1s 1s forwards;
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    display: inline-block;
+    min-width: 10px;
+    animation-fill-mode: both;
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    transition: background-size 0.5s ease-in-out,
+        background-position 0.5s ease-in-out;
+
+    &:hover {
+        animation: rubberBand 1s;
+        background: -webkit-linear-gradient(
+            90deg,
+            hsla(154, 100%, 76%, 1) 0%,
+            hsla(234, 100%, 83%, 1) 50%,
+            hsla(288, 100%, 81%, 1) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-size: 100% 200%;
+        background-position: 0 0;
+        color: transparent;
+        transition: background-size 5s;
+    }
+}
+
+@for $i from 1 through 35 {
+    .text-animate._#{$i} {
+        animation-delay: #{math.div($i, 10)}s;
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
