@@ -10,16 +10,29 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import ScrollDrawSVG from "./components/ScrollDrawSVG";
 import ScrambleText from "./components/ScrambleText";
+import { PROJECTS } from "./constants/index";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [isScrollDraw, setIsScrollDraw] = useState(false);
 
     useEffect(() => {
-        const loadComponents = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
+        const preloadImages = () => {
+            return PROJECTS.map((project) => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = project.image;
+                    img.onload = resolve;
+                    img.onerror = reject;
+                });
+            });
+        };
 
+        const loadComponents = async () => {
             await Promise.all([
+                ...preloadImages(),
+                new Promise((resolve) => setTimeout(resolve, 2000)),
+                import("./constants/index"),
                 import("./components/Hero"),
                 import("./components/Navbar"),
                 import("./components/Projects"),
@@ -30,7 +43,6 @@ function App() {
                 import("./components/ContactForm"),
                 import("./components/Footer"),
                 import("./components/ScrollDrawSVG"),
-                import("./constants/index"),
             ]);
 
             setIsLoading(false);

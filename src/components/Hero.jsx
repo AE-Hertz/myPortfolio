@@ -49,6 +49,8 @@ function Hero() {
                             height={550}
                             alt="Abhinandan Kumar"
                             className="rounded-3xl"
+                            rel="preload"
+                            fetchPriority="high"
                         ></motion.img>
                     </div>
                 </motion.div>
