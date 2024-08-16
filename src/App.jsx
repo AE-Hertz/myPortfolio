@@ -16,11 +16,25 @@ function App() {
     const [isScrollDraw, setIsScrollDraw] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const loadComponents = async () => {
+            await Promise.all([
+                import("./components/Hero"),
+                import("./components/Navbar"),
+                import("./components/Projects"),
+                import("./components/Bio"),
+                import("./components/Skills"),
+                import("./components/WorkExperience"),
+                import("./components/Education"),
+                import("./components/ContactForm"),
+                import("./components/Footer"),
+                import("./components/ScrollDrawSVG"),
+                import("./components/ScrambleText"),
+            ]);
             setIsLoading(false);
             setIsScrollDraw(true);
-        }, 3000);
-        return () => clearTimeout(timer);
+        };
+
+        loadComponents();
     }, []);
 
     useEffect(() => {
