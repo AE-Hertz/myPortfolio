@@ -17,6 +17,8 @@ function App() {
 
     useEffect(() => {
         const loadComponents = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+
             await Promise.all([
                 import("./components/Hero"),
                 import("./components/Navbar"),
@@ -28,8 +30,8 @@ function App() {
                 import("./components/ContactForm"),
                 import("./components/Footer"),
                 import("./components/ScrollDrawSVG"),
-                import("./components/ScrambleText"),
             ]);
+
             setIsLoading(false);
             setIsScrollDraw(true);
         };
@@ -52,12 +54,12 @@ function App() {
         <>
             <div
                 id="my-component"
-                className="relative h-full overflow-y-auto antialiased cursor-fancy "
+                className="relative h-full overflow-y-auto antialiased cursor-fancy"
             >
                 <div className="fixed inset-0 bg-fixed bg-center bg-img"></div>
                 <div className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto">
                     {isLoading ? (
-                        <div className="fixed inset-0 drop-shadow-2xl shadow-red-600 content-end bg-black text-white cursor-default hover:backdrop:blur-2xl hover:bg-none">
+                        <div className="fixed inset-0 flex items-center justify-center drop-shadow-2xl shadow-red-600 content-end bg-black text-white cursor-default hover:backdrop:blur-2xl hover:bg-none">
                             <ScrambleText
                                 text="Welcome..."
                                 duration={2000}
@@ -78,8 +80,7 @@ function App() {
                         </>
                     )}
                 </div>
-                {isScrollDraw && <ScrollDrawSVG />}{" "}
-                {/* Can also use this {isScrollDraw ? <ScrollDrawSVG/> : null} */}
+                {isScrollDraw && <ScrollDrawSVG />}
             </div>
         </>
     );
