@@ -1,6 +1,6 @@
 import React from "react";
 import { PROJECTS } from "../constants";
-import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward } from "react-icons";
 import { motion } from "framer-motion";
 
 function Projects() {
