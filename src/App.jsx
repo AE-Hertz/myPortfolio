@@ -30,6 +30,7 @@ function App() {
                 import("./components/ContactForm"),
                 import("./components/Footer"),
                 import("./components/ScrollDrawSVG"),
+                import("./constants/index"),
             ]);
 
             setIsLoading(false);
