@@ -85,12 +85,12 @@ export const PROJECTS = [
     },
     {
         id: 6,
-        name: "Chat Application",
+        name: "Chat App",
         description:
-            "A real-time chat application using Firebase for backend services, including user authentication, chat rooms, and instant messaging features. Built with React and Firebase.",
+            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated with the Gemini API for AI-powered text generation and coding assistance. Built with React and Vite, offering a smooth and responsive user experience.",
         image: ff,
-        githubLink: "https://github.com/user/chat-application",
-        tryLink: "",
+        githubLink: "https://github.com/AE-Hertz/chatapp-test",
+        tryLink: "https://chatapp-test-xi.vercel.app/",
     },
 ];
 
