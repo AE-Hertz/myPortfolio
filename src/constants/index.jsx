@@ -90,7 +90,7 @@ export const PROJECTS = [
             "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated with the Gemini API for AI-powered text generation and coding assistance. Built with React and Vite, offering a smooth and responsive user experience.",
         image: ff,
         githubLink: "https://github.com/AE-Hertz/chatapp-test",
-        tryLink: "https://chatapp-test-xi.vercel.app/",
+        tryLink: "https://hertz-trinity.vercel.app/",
     },
 ];
 
