@@ -53,8 +53,8 @@ export const PROJECTS = [
         description:
             "An e-commerce web application developed using Next.js and Stripe for payment integration, featuring a comprehensive product catalog, shopping cart, and checkout system.",
         image: bb,
-        githubLink: "https://github.com/user/ecommerce-platform",
-        tryLink: "",
+        githubLink: "https://hertz-struct.vercel.app/",
+        tryLink: "https://hertz-struct.vercel.app/",
     },
     {
         id: 3,
