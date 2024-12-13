@@ -137,6 +137,12 @@ export const SKILLS = [
 
 export const EXPERIENCES = [
     {
+        title: "Web Developer Intern",
+        company: "MotionCut technologies",
+        duration: "Sep 2024 - Oct 2024",
+        description: "During my intership I developed a movie and TV series database site using React, Bootstrap, and TMDB APIs. Implemented user authentication, favorites management with MongoDB, and server-side validation using Express Validator. Delivered a responsive, user-friendly interface with seamless data integration and secure backend operations."
+    },
+    {
         title: "Lead, CV Club",
         company: "Marwadi University",
         duration: "Jan 2024 - Jun 2024",
