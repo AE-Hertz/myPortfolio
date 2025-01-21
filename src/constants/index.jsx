@@ -40,21 +40,21 @@ export const HERO = {
 export const PROJECTS = [
     {
         id: 1,
-        name: "Personal Portfolio",
+        name: "Chat App",
         description:
-            "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
+            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated with the Gemini API for AI-powered text generation and coding assistance. Built with React and Vite, offering a smooth and responsive user experience.",
         image: aa,
-        githubLink: "https://github.com/user/personal-portfolio",
-        tryLink: "",
+        githubLink: "https://github.com/AE-Hertz/chatapp-test",
+        tryLink: "https://hertz-trinity.vercel.app/",
     },
     {
         id: 2,
-        name: "E-Commerce Platform",
+        name: "Portfolio for Animata.design",
         description:
-            "An e-commerce web application developed using Next.js and Stripe for payment integration, featuring a comprehensive product catalog, shopping cart, and checkout system.",
+            "A portfolio template that i have made during my open-source conrtibution for animata.design.",
         image: bb,
-        githubLink: "https://hertz-struct.vercel.app/",
-        tryLink: "https://hertz-struct.vercel.app/",
+        githubLink: "https://github.com/AE-Hertz/animata-issue-191",
+        tryLink: "https://animata-issue-191.vercel.app/",
     },
     {
         id: 3,
@@ -85,12 +85,12 @@ export const PROJECTS = [
     },
     {
         id: 6,
-        name: "Chat App",
+        name: "E-Commerce Platform",
         description:
-            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated with the Gemini API for AI-powered text generation and coding assistance. Built with React and Vite, offering a smooth and responsive user experience.",
+            "An e-commerce web application developed using Next.js and Stripe for payment integration, featuring a comprehensive product catalog, shopping cart, and checkout system.",
         image: ff,
-        githubLink: "https://github.com/AE-Hertz/chatapp-test",
-        tryLink: "https://hertz-trinity.vercel.app/",
+        githubLink: "https://hertz-struct.vercel.app/",
+        tryLink: "https://hertz-struct.vercel.app/",
     },
 ];
 
@@ -140,7 +140,8 @@ export const EXPERIENCES = [
         title: "Web Developer Intern",
         company: "MotionCut technologies",
         duration: "Sep 2024 - Oct 2024",
-        description: "During my intership I developed a movie and TV series database site using React, Bootstrap, and TMDB APIs. Implemented user authentication, favorites management with MongoDB, and server-side validation using Express Validator. Delivered a responsive, user-friendly interface with seamless data integration and secure backend operations."
+        description:
+            "During my intership I developed a movie and TV series database site using React, Bootstrap, and TMDB APIs. Implemented user authentication, favorites management with MongoDB, and server-side validation using Express Validator. Delivered a responsive, user-friendly interface with seamless data integration and secure backend operations.",
     },
     {
         title: "Lead, CV Club",
