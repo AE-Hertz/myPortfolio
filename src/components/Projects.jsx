@@ -55,8 +55,8 @@ function Projects() {
                                     : "group-hover:opacity-100"
                             }`}
                         >
-                            <h3 className="mb-2 text-xl">{project.name}</h3>
-                            <p className="mb-12 p-4">{project.description}</p>
+                            <h3 className="mb-2 text-sm lg:text-2xl">{project.name}</h3>
+                            <p className="mb-12 p-4 text-xs lg:text-base">{project.description}</p>
 
                             <div className="flex space-x-2">
                                 <a
