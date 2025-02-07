@@ -40,9 +40,9 @@ export const HERO = {
 export const PROJECTS = [
     {
         id: 1,
-        name: "Chat App",
+        name: "Trinity",
         description:
-            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated with the Gemini API for AI-powered text generation and coding assistance. Built with React and Vite, offering a smooth and responsive user experience.",
+            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated Gemini API for AI text & code assistance.",
         image: aa,
         githubLink: "https://github.com/AE-Hertz/chatapp-test",
         tryLink: "https://hertz-trinity.vercel.app/",

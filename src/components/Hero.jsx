@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HERO } from "../constants";
 import { motion } from "framer-motion";
 import abhi from "../assets/abhi.jpeg";
+import newabhi from "../assets/ssss.jpg";
 import AnimatedLetter from "./AnimatedLetters/AnimatedLetter";
 
 function Hero() {
@@ -44,7 +45,7 @@ function Hero() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
-                            src={abhi}
+                            src={newabhi}
                             width={550}
                             height={550}
                             alt="Abhinandan Kumar"
