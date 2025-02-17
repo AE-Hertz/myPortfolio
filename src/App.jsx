@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
@@ -11,27 +12,28 @@ import Footer from "./components/Footer";
 import ScrollDrawSVG from "./components/ScrollDrawSVG";
 import ScrambleText from "./components/ScrambleText";
 import { PROJECTS } from "./constants/index";
+import ResumePage from "./components/ResumePage";
 
-function App() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [isScrollDraw, setIsScrollDraw] = useState(false);
+function HomePage() {
+   const [isLoading, setIsLoading] = useState(true);
+   const [isScrollDraw, setIsScrollDraw] = useState(false);
 
-    useEffect(() => {
-        const preloadImages = () => {
-            return PROJECTS.map((project) => {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.src = project.image;
-                    img.onload = resolve;
-                    img.onerror = reject;
-                });
+   useEffect(() => {
+      const preloadImages = () => {
+         return PROJECTS.map((project) => {
+            return new Promise((resolve, reject) => {
+               const img = new Image();
+               img.src = project.image;
+               img.onload = resolve;
+               img.onerror = reject;
             });
-        };
+         });
+      };
 
-        const loadComponents = async () => {
-            await Promise.all([
-                ...preloadImages(),
-                new Promise((resolve) => setTimeout(resolve, 2000)),
+      const loadComponents = async () => {
+         await Promise.all([
+            ...preloadImages(),
+            new Promise((resolve) => setTimeout(resolve, 2000)),
                 import("./constants/index"),
                 import("./components/Hero"),
                 import("./components/Navbar"),
@@ -43,14 +45,13 @@ function App() {
                 import("./components/ContactForm"),
                 import("./components/Footer"),
                 import("./components/ScrollDrawSVG"),
-            ]);
+         ]);
+         setIsLoading(false);
+         setIsScrollDraw(true);
+      };
 
-            setIsLoading(false);
-            setIsScrollDraw(true);
-        };
-
-        loadComponents();
-    }, []);
+      loadComponents();
+   }, []);
 
     useEffect(() => {
         function handleContextMenu(e) {
@@ -63,40 +64,43 @@ function App() {
         };
     }, []);
 
-    return (
-        <>
-            <div
-                id="my-component"
-                className="relative h-full overflow-y-auto antialiased cursor-fancy"
-            >
-                <div className="fixed inset-0 bg-fixed bg-center bg-img"></div>
-                <div className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto">
-                    {isLoading ? (
-                        <div className="fixed inset-0 flex items-center justify-center drop-shadow-2xl shadow-red-600 content-end bg-black text-white cursor-default hover:backdrop:blur-2xl hover:bg-none">
-                            <ScrambleText
-                                text="Welcome..."
-                                duration={2000}
-                                delay={100}
-                            />
-                        </div>
-                    ) : (
-                        <>
-                            <Hero />
-                            <Navbar />
-                            <Projects />
-                            <Bio />
-                            <Skills />
-                            <WorkExperience />
-                            <Education />
-                            <ContactForm />
-                            <Footer />
-                        </>
-                    )}
-                </div>
-                {isScrollDraw && <ScrollDrawSVG />}
-            </div>
-        </>
-    );
+   return (
+      <div
+         id="my-component"
+         className="relative h-full overflow-y-auto antialiased cursor-fancy"
+      >
+         <div className="fixed inset-0 bg-fixed bg-center bg-img"></div>
+         <div className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto">
+            {isLoading ? (
+               <div className="fixed inset-0 flex items-center justify-center drop-shadow-2xl shadow-red-600 content-end bg-black text-white cursor-default hover:backdrop:blur-2xl hover:bg-none">
+                  <ScrambleText text="Welcome..." duration={2000} delay={100} />
+               </div>
+            ) : (
+               <>
+                  <Hero />
+                  <Navbar />
+                  <Projects />
+                  <Bio />
+                  <Skills />
+                  <WorkExperience />
+                  <Education />
+                  <ContactForm />
+                  <Footer />
+               </>
+            )}
+         </div>
+         {isScrollDraw && <ScrollDrawSVG />}
+      </div>
+   );
+}
+
+function App() {
+   return (
+      <Routes>
+         <Route path="/" element={<HomePage />} />
+         <Route path="/resume" element={<ResumePage />} />
+      </Routes>
+   );
 }
 
 export default App;
