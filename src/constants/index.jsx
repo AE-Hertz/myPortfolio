@@ -40,12 +40,12 @@ export const HERO = {
 export const PROJECTS = [
     {
         id: 1,
-        name: "Trinity",
+        name: "CAL-X",
         description:
-            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated Gemini API for AI text & code assistance.",
+            "An Calculator app built with React Vite and backend built with FastApi, it is made to calculate the results based on the expressions you will provide just like you would on a real whiteboard.",
         image: aa,
-        githubLink: "https://github.com/AE-Hertz/chatapp-test",
-        tryLink: "https://hertz-trinity.vercel.app/",
+        githubLink: "https://github.com/AE-Hertz/CALX",
+        tryLink: "https://hzcalx.vercel.app/",
     },
     {
         id: 2,
@@ -58,12 +58,12 @@ export const PROJECTS = [
     },
     {
         id: 3,
-        name: "CAL-X",
+        name: "Trinity",
         description:
-            "An Calculator app built with React Vite and backend built with FastApi, it is made to calculate the results based on the expressions you will provide just like you would on a real whiteboard.",
-        image: ff,
-        githubLink: "https://github.com/AE-Hertz/CALX",
-        tryLink: "https://hzcalx.vercel.app/",
+            "A real-time chat application using the Chat Engine API for user authentication and instant messaging, integrated Gemini API for AI text & code assistance.",
+        image: cc,
+        githubLink: "https://github.com/AE-Hertz/chatapp-test",
+        tryLink: "https://hertz-trinity.vercel.app/",
     },
     {
         id: 4,
@@ -79,7 +79,7 @@ export const PROJECTS = [
         name: "Cursor Animation",
         description:
             "An interactive cursor animation project utilizing HTML, CSS, and JavaScript, designed to customizable effects, deployed on Vercel, and used geometry to calculate cursor movement.",
-        image: cc,
+        image: ee,
         githubLink: "https://github.com/AE-Hertz/Cursor-Animation/",
         tryLink: "https://cursor-animation-hertz.vercel.app/",
     },
@@ -88,7 +88,7 @@ export const PROJECTS = [
         name: "Digital Clock",
         description:
             "A sleek digital clock built with React Vite and animated with Anime.js, displaying real-time user time and timezone with dynamic sphere animation, deployed on Vercel.",
-        image: ee,
+        image: ff,
         githubLink: "https://github.com/AE-Hertz/digitalClock",
         tryLink: "https://clock-hertz.vercel.app/",
     }
