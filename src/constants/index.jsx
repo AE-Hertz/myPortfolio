@@ -1,4 +1,3 @@
-import React from "react";
 
 import {
     FaXTwitter,
@@ -58,12 +57,12 @@ export const PROJECTS = [
     },
     {
         id: 3,
-        name: "Cursor Animation",
+        name: "CAL-X",
         description:
-            "An interactive cursor animation project utilizing HTML, CSS, and JavaScript, designed to customizable effects, deployed on Vercel, and used geometry to calculate cursor movement.",
-        image: cc,
-        githubLink: "https://github.com/AE-Hertz/Cursor-Animation/",
-        tryLink: "https://cursor-animation-hertz.vercel.app/",
+            "An Calculator app built with React Vite and backend built with FastApi, it is made to calculate the results based on the expressions you will provide just like you would on a real whiteboard.",
+        image: ff,
+        githubLink: "https://github.com/AE-Hertz/CALX",
+        tryLink: "https://hzcalx.vercel.app/",
     },
     {
         id: 4,
@@ -76,22 +75,23 @@ export const PROJECTS = [
     },
     {
         id: 5,
+        name: "Cursor Animation",
+        description:
+            "An interactive cursor animation project utilizing HTML, CSS, and JavaScript, designed to customizable effects, deployed on Vercel, and used geometry to calculate cursor movement.",
+        image: cc,
+        githubLink: "https://github.com/AE-Hertz/Cursor-Animation/",
+        tryLink: "https://cursor-animation-hertz.vercel.app/",
+    },
+    {
+        id: 6,
         name: "Digital Clock",
         description:
             "A sleek digital clock built with React Vite and animated with Anime.js, displaying real-time user time and timezone with dynamic sphere animation, deployed on Vercel.",
         image: ee,
         githubLink: "https://github.com/AE-Hertz/digitalClock",
         tryLink: "https://clock-hertz.vercel.app/",
-    },
-    {
-        id: 6,
-        name: "E-Commerce Platform",
-        description:
-            "An e-commerce web application developed using Next.js and Stripe for payment integration, featuring a comprehensive product catalog, shopping cart, and checkout system.",
-        image: ff,
-        githubLink: "https://hertz-struct.vercel.app/",
-        tryLink: "https://hertz-struct.vercel.app/",
-    },
+    }
+    ,
 ];
 
 export const BIO = [
@@ -106,7 +106,7 @@ export const SKILLS = [
     {
         icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />,
         name: "React",
-        experience: "1+ year",
+        experience: "2+ year",
     },
     {
         icon: <TbBrandNextjs className="text-4xl text-white lg:text-5xl" />,
@@ -121,17 +121,17 @@ export const SKILLS = [
     {
         icon: <SiExpress className="text-4xl text-white lg:text-5xl" />,
         name: "Express.js",
-        experience: "1+ year",
+        experience: "2+ year",
     },
     {
         icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />,
         name: "Node.js",
-        experience: "1+ year",
+        experience: "2+ year",
     },
     {
         icon: <SiTailwindcss className="text-4xl text-sky-500 lg:text-5xl" />,
         name: "Tailwind CSS",
-        experience: "2+ year",
+        experience: "3+ year",
     },
 ];
 
@@ -170,7 +170,7 @@ export const EDUCATION = [
     {
         degree: "Bachelor of Technology in Computer Science with a specialization in AI",
         institution: "Marwadi University, India",
-        duration: "May 2021 - May 2025 (expected)",
+        duration: "May 2021 - May 2025",
         description:
             "Focusing on Artificial Intelligence and web development. Gained expertise in HTML, CSS, JavaScript, React, Node.js, MongoDB, and Next.js. Developed several web projects with a strong emphasis on design and user experience. Founded and Lead ComputerVision Club in my University, helping student to gain knowledge about Computer Vision. Expected to graduate in 2025.",
     },
