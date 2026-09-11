@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import React, { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { NAVIGATION_LINKS } from "../constants";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
@@ -33,7 +33,7 @@ function Navbar() {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleLinkClick = (e, href) => {
+    const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const targetElement = document.querySelector(href);
         if (targetElement) {

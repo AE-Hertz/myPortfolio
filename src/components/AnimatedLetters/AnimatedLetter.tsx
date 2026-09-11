@@ -1,6 +1,12 @@
-import React from "react";
 import "./index.scss";
-const AnimatedLetter = ({ letterClass, strArray, idx }) => {
+
+interface AnimatedLetterProps {
+    letterClass: string;
+    strArray: string[];
+    idx: number;
+}
+
+const AnimatedLetter = ({ letterClass, strArray, idx }: AnimatedLetterProps) => {
     return (
         <span>
             {strArray.map((char, i) => (

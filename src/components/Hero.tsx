@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { HERO } from "../constants";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText } from "lucide-react";
-import abhi from "../assets/abhi.jpeg";
 import newabhi from "../assets/ssss.jpg";
 import AnimatedLetter from "./AnimatedLetters/AnimatedLetter";
 

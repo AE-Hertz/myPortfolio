@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import { motion } from "framer-motion";
 
+interface FormData {
+    [key: string]: string;
+    name: string;
+    email: string;
+    message: string;
+}
+
+type FormErrors = Partial<Record<keyof FormData, string>>;
+
 function ContactForm() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         message: "",
     });
 
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState<FormErrors>({});
     const [isSending, setIsSending] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -22,8 +33,8 @@ function ContactForm() {
         });
     };
 
-    const validate = () => {
-        let errors = {};
+    const validate = (): FormErrors => {
+        const errors: FormErrors = {};
         if (!formData.name) errors.name = "Name is required";
         if (!formData.email) {
             errors.email = "Email is required";
@@ -34,7 +45,7 @@ function ContactForm() {
         return errors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
@@ -50,7 +61,7 @@ function ContactForm() {
                     formData,
                     "xttVyBP1qFvRigie7"
                 )
-                .then((response) => {
+                .then(() => {
                     toast.success("Message sent successfully");
                     setFormData({ name: "", email: "", message: "" });
                 })
@@ -71,7 +82,7 @@ function ContactForm() {
             <div className="p-4 lg:w-3/4" id="contact">
                 <Toaster />
                 <h2 className="my-8 text-center text-4xl font-semibold tracking-tighter">
-                    Let's Connect
+                    Let&apos;s Connect
                 </h2>
                 <motion.form
                     initial={{ opacity: 0 }}
@@ -129,7 +140,7 @@ function ContactForm() {
                             placeholder="Message"
                             onChange={handleChange}
                             className="mb-8 w-full appearance-none rounded-lg border border-stone-50/30 bg-transparent px-3 py-2 text-sm focus:border-stone-400 focus:outline-none "
-                            rows="6"
+                            rows={6}
                         ></textarea>
                         {errors.message && (
                             <motion.p

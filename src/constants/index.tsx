@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
     FaXTwitter,
     FaGithub,
@@ -210,4 +208,3 @@ export const SOCIAL_MEDIA_LINKS = [
         icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
     },
 ];
-

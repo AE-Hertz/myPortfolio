@@ -1,4 +1,4 @@
-import React from "react";
+import { type ReactNode } from "react";
 
 const ResumePage = () => {
    return (
@@ -108,7 +108,12 @@ const ResumePage = () => {
    );
 };
 
-function Section({ title, children }) {
+interface SectionProps {
+   title: string;
+   children: ReactNode;
+}
+
+function Section({ title, children }: SectionProps) {
    return (
       <div className="mt-8">
          <h3 className="border-b pb-2 text-lg font-semibold">{title}</h3>
@@ -117,7 +122,13 @@ function Section({ title, children }) {
    );
 }
 
-function Experience({ role, period, responsibilities }) {
+interface ExperienceProps {
+   role: string;
+   period: string;
+   responsibilities: string[];
+}
+
+function Experience({ role, period, responsibilities }: ExperienceProps) {
    return (
       <div className="mt-4">
          <div className="flex justify-between text-sm font-medium">
@@ -133,6 +144,8 @@ function Experience({ role, period, responsibilities }) {
    );
 }
 
+// This constant is exported for reuse outside the component tree.
+// eslint-disable-next-line react-refresh/only-export-components
 export const achievements = [
    "Patent Holder: Published a patent in Computer Science during the 3rd year of engineering.",
    "GSSoC-extd’24 Worldwide Rank 32nd out of 60K+ Contributors.",

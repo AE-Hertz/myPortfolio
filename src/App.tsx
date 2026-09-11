@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
@@ -54,10 +54,13 @@ function HomePage() {
    }, []);
 
     useEffect(() => {
-        function handleContextMenu(e) {
+        function handleContextMenu(e: MouseEvent) {
             e.preventDefault();
         }
         const rootElement = document.getElementById("my-component");
+        if (!rootElement) {
+            return;
+        }
         rootElement.addEventListener("contextmenu", handleContextMenu);
         return () => {
             rootElement.removeEventListener("contextmenu", handleContextMenu);
