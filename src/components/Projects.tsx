@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
+import Button from "./ui/button";
 
 function Projects() {
     const [isWidth, setIsWidth] = useState(window.innerWidth <= 1020);
@@ -59,28 +60,18 @@ function Projects() {
                             <p className="mb-12 p-4 text-xs lg:text-base">{project.description}</p>
 
                             <div className="flex space-x-2">
-                                <a
-                                    href={project.githubLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="rounded-full bg-white px-4 py-4 text-black hover:bg-gray-300 cursor-pointer"
-                                >
-                                    <div className="flex items-center cursor-pointer">
+                                <Button href={project.githubLink} target="_blank" rel="noopener noreferrer" variant="default" className="rounded-full px-4 py-4 text-black hover:bg-gray-300">
+                                    <div className="flex items-center">
                                         <span>View on Github</span>
                                         <MdArrowOutward />
                                     </div>
-                                </a>
-                                <a
-                                    href={project.tryLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="rounded-full bg-stone-900 px-4 py-4 text-white hover:bg-stone-800 cursor-pointer"
-                                >
-                                    <div className="flex items-center cursor-pointer">
+                                </Button>
+                                <Button href={project.tryLink} target="_blank" rel="noopener noreferrer" variant="ghost" className="rounded-full px-4 py-4 text-white hover:bg-stone-800">
+                                    <div className="flex items-center">
                                         <span>Try</span>
                                         <MdArrowOutward />
                                     </div>
-                                </a>
+                                </Button>
                             </div>
                         </motion.div>
                     </motion.div>

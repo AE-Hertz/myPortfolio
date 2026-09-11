@@ -3,6 +3,9 @@ import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import { motion } from "framer-motion";
+import Button from "./ui/button";
+import Input from "./ui/input";
+import Textarea from "./ui/textarea";
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -81,15 +84,15 @@ function ContactForm() {
                 >
                     <div className="mb-4 flex space-x-4">
                         <div className="lg:w-1/2">
-                            <input
+                            <Input
                                 type="text"
                                 id="name"
                                 name="name"
                                 value={formData.name}
                                 placeholder="Name"
                                 onChange={handleChange}
-                                className="mb-8 w-full appearance-none rounded-lg border border-stone-50/30 bg-transparent px-3 py-2 text-sm focus:border-stone-400 focus:outline-none "
-                            ></input>
+                                className="mb-8"
+                            />
                             {errors.name && (
                                 <motion.p
                                     initial={{ opacity: 0 }}
@@ -101,15 +104,15 @@ function ContactForm() {
                             )}
                         </div>
                         <div className="lg:w-1/2">
-                            <input
+                            <Input
                                 type="email"
                                 id="email"
                                 name="email"
                                 value={formData.email}
                                 placeholder="Email"
                                 onChange={handleChange}
-                                className="mb-8 w-full appearance-none rounded-lg border border-stone-50/30 bg-transparent px-3 py-2 text-sm focus:border-stone-400 focus:outline-none "
-                            ></input>
+                                className="mb-8"
+                            />
                             {errors.email && (
                                 <motion.p
                                     initial={{ opacity: 0 }}
@@ -122,15 +125,15 @@ function ContactForm() {
                         </div>
                     </div>
                     <div className="mb-4">
-                        <textarea
+                        <Textarea
                             id="message"
                             name="message"
                             value={formData.message}
                             placeholder="Message"
                             onChange={handleChange}
-                            className="mb-8 w-full appearance-none rounded-lg border border-stone-50/30 bg-transparent px-3 py-2 text-sm focus:border-stone-400 focus:outline-none "
-                            rows="6"
-                        ></textarea>
+                            rows={6}
+                            className="mb-8"
+                        />
                         {errors.message && (
                             <motion.p
                                 initial={{ opacity: 0 }}
@@ -141,18 +144,17 @@ function ContactForm() {
                             </motion.p>
                         )}
                     </div>
-                    <button
+                    <Button
                         type="submit"
-                        className={`mb-8 w-full rounded border border-stone-50/30 bg-stone-200 cursor-pointer px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-300 ${
-                            isSending ? "cursor-not-allowed opacity-50" : ""
-                        }`}
+                        variant="default"
+                        className={`mb-8 w-full rounded px-4 py-2 text-sm font-semibold ${isSending ? "cursor-not-allowed opacity-50" : ""}`}
                         disabled={isSending}
                     >
                         <div className="flex items-center justify-center gap-2">
                             {isSending ? "Sending..." : "Send"}
                             <FiSend />
                         </div>
-                    </button>
+                    </Button>
                 </motion.form>
             </div>
         </>

@@ -13,7 +13,17 @@ export default function Button({ variant = "default", className = "", ...props }
   };
   const variantClass = variants[variant] || variants.default;
 
+  // If href is present, render an anchor for link-like buttons
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const anyProps = props as any;
+  if (anyProps.href) {
+    const { href, target, rel, ...rest } = anyProps;
+    return (
+      <a href={href} target={target} rel={rel ?? undefined} className={`${base} ${variantClass} ${className}`} {...rest} />
+    );
+  }
+
   return (
-    <button className={`${base} ${variantClass} ${className}`} {...props} />
+    <button className={`${base} ${variantClass} ${className}`} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)} />
   );
 }
