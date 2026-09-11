@@ -54,10 +54,10 @@ function HomePage() {
    }, []);
 
     useEffect(() => {
-        function handleContextMenu(e) {
+        function handleContextMenu(e: Event) {
             e.preventDefault();
         }
-        const rootElement = document.getElementById("my-component");
+        const rootElement = document.getElementById("my-component")!;
         rootElement.addEventListener("contextmenu", handleContextMenu);
         return () => {
             rootElement.removeEventListener("contextmenu", handleContextMenu);

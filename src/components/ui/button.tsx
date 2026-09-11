@@ -1,6 +1,6 @@
 import React from "react";
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = (React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>) & {
   variant?: "default" | "ghost" | "outline";
 };
 

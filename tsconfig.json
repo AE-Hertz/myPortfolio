@@ -7,13 +7,15 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "sourceMap": true,
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "allowImportingTsExtensions": true,
+    "noImplicitAny": false
   },
   "include": ["src", "src/**/*.d.ts"],
   "references": []

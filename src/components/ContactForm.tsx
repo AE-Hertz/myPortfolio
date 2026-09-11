@@ -8,25 +8,31 @@ import Input from "./ui/input";
 import Textarea from "./ui/textarea";
 
 function ContactForm() {
-    const [formData, setFormData] = useState({
+    type FormData = {
+        name: string;
+        email: string;
+        message: string;
+    };
+
+    const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         message: "",
     });
 
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
     const [isSending, setIsSending] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target as HTMLInputElement;
         setFormData({
             ...formData,
             [name]: value,
         });
     };
 
-    const validate = () => {
-        let errors = {};
+    const validate = () : Partial<Record<keyof FormData, string>> => {
+        let errors: Partial<Record<keyof FormData, string>> = {};
         if (!formData.name) errors.name = "Name is required";
         if (!formData.email) {
             errors.email = "Email is required";
@@ -37,7 +43,7 @@ function ContactForm() {
         return errors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
