@@ -4,6 +4,7 @@ import { NAVIGATION_LINKS } from "../constants";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import Button from "./ui/button";
 
 const containerVariants = {
     hidden: { opacity: 1 },
@@ -115,16 +116,13 @@ function Navbar() {
                                 transition={{ duration: 0.2 }}
                                 className="flex items-center"
                             >
-                                <button
-                                    className="focus:outline-none lg:hidden"
-                                    onClick={toggleMobileMenu}
-                                >
+                                <Button variant="ghost" className="lg:hidden focus:outline-none" onClick={toggleMobileMenu}>
                                     {isMobileMenuOpen ? (
                                         <FaTimes className="m-2 h-6 w-5" />
                                     ) : (
                                         <FaBars className="m-2 h-6 w-5" />
                                     )}
-                                </button>
+                                </Button>
                             </motion.div>
                         </div>
                         {isMobileMenuOpen && (
