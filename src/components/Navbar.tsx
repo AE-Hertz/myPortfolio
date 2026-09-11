@@ -5,6 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Button from "./ui/button";
+import ThemeToggle from "./ui/theme-toggle";
 
 const containerVariants = {
     hidden: { opacity: 1 },
@@ -123,6 +124,7 @@ function Navbar() {
                                         <FaBars className="m-2 h-6 w-5" />
                                     )}
                                 </Button>
+                                <ThemeToggle />
                             </motion.div>
                         </div>
                         {isMobileMenuOpen && (
