@@ -3,6 +3,7 @@ import { SOCIAL_MEDIA_LINKS } from "../constants";
 import { motion } from "framer-motion";
 import AnimatedLetter from "./AnimatedLetters/AnimatedLetter";
 import IconButton from "./ui/icon-button";
+import Badge from "./ui/badge";
 
 function Footer() {
     const [letterClass, setLetterClass] = useState("text-animate");
@@ -14,7 +15,8 @@ function Footer() {
 
     return (
         <footer className="mb-8 mt-20">
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-3">
+                <Badge variant="outline">Let's build something meaningful</Badge>
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

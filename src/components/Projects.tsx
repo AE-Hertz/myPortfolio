@@ -3,6 +3,7 @@ import { PROJECTS } from "../constants";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 import Button from "./ui/button";
+import Badge from "./ui/badge";
 
 function Projects() {
     const [isWidth, setIsWidth] = useState(window.innerWidth <= 1020);
@@ -56,6 +57,9 @@ function Projects() {
                                     : "group-hover:opacity-100"
                             }`}
                         >
+                            <div className="mb-3 flex justify-center">
+                                <Badge variant="secondary">Featured project</Badge>
+                            </div>
                             <h3 className="mb-2 text-sm lg:text-2xl">{project.name}</h3>
                             <p className="mb-12 p-4 text-xs lg:text-base">{project.description}</p>
 
