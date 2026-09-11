@@ -1,20 +1,16 @@
 import React from "react";
 
-const ResumePage = () => {
+const ResumePage: React.FC = () => {
    return (
-      <div className="flex justify-center bg-gray-200 text-white py-10">
-         <div className="border-8 border-blue-100 backdrop-blur-xl rounded-lg shadow-2xl shadow-black w-full max-w-4xl">
+      <div className="flex justify-center bg-gray-900 text-white py-10">
+         <div className="border-8 border-stone-800 backdrop-blur-xl rounded-lg shadow-2xl shadow-black w-full max-w-4xl">
             <div className="bg-black p-10 rounded-lg">
-               <h1 className="text-center text-5xl font-bold tracking-wide">
+               <h1 className="text-center text-4xl md:text-5xl font-bold tracking-wide">
                   ABHINANDAN KUMAR
                </h1>
-               <div className="flex items-center justify-center space-x-10 max-w-4xl mt-4 text-sm underline">
+               <div className="flex items-center justify-center space-x-6 max-w-4xl mt-4 text-sm underline">
                   <a href="mailto:abhinandankumar102001@gmail.com">Email</a>
-                  <a
-                     href="https://www.linkedin.com/in/abhinandan-kumar-373b31136/"
-                  >
-                     Linkedin
-                  </a>
+                  <a href="https://www.linkedin.com/in/abhinandan-kumar-373b31136/">Linkedin</a>
                   <a href="https://github.com/AE-Hertz">Github</a>
                </div>
 
@@ -108,7 +104,7 @@ const ResumePage = () => {
    );
 };
 
-function Section({ title, children }) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
    return (
       <div className="mt-8">
          <h3 className="border-b pb-2 text-lg font-semibold">{title}</h3>
@@ -117,7 +113,7 @@ function Section({ title, children }) {
    );
 }
 
-function Experience({ role, period, responsibilities }) {
+function Experience({ role, period, responsibilities }: { role: string; period: string; responsibilities: string[] }) {
    return (
       <div className="mt-4">
          <div className="flex justify-between text-sm font-medium">

@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 
-const ScrambleText = ({ text, duration = 2000, delay = 100 }) => {
+type ScrambleTextProps = {
+  text: string;
+  duration?: number;
+  delay?: number;
+};
+
+const ScrambleText: React.FC<ScrambleTextProps> = ({ text, duration = 2000, delay = 100 }) => {
     const [scrambledText, setScrambledText] = useState("");
     const characters =
-        "二 三 四 五 六 七 八 九 十 目 手 足 口 耳 体 車 学 生 休 月 火 水 木 金 土 日";
+        "二 三 四 五 六 七 八 九 十 目 手 足 口 耳 体 車 学 生 休 月 火 水 木 金 土 日".split(" ");
 
     useEffect(() => {
         const startTime = Date.now();
         const textArray = text.split("");
-        const totalSteps = Math.ceil(duration / delay);
+        const totalSteps = Math.max(1, Math.ceil(duration / delay));
 
         const revealText = () => {
             const elapsedTime = Date.now() - startTime;
@@ -35,8 +41,9 @@ const ScrambleText = ({ text, duration = 2000, delay = 100 }) => {
             setScrambledText(revealedText);
         };
 
-        const interval = setInterval(revealText, 50);
+        const interval = setInterval(revealText, Math.max(20, delay));
 
+        revealText();
         return () => clearInterval(interval);
     }, [text, duration, delay]);
 

@@ -3,6 +3,7 @@ import { HERO } from "../constants";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText } from "lucide-react";
+import Button from "./ui/button";
 import abhi from "../assets/abhi.jpeg";
 import newabhi from "../assets/ssss.jpg";
 import AnimatedLetter from "./AnimatedLetters/AnimatedLetter";
@@ -60,18 +61,21 @@ function Hero() {
             </motion.div>
          </section>
 
-         <motion.div
+            <motion.div
             className="fixed bottom-16 right-6 z-50"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.2, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-         >
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            >
             <Link to="/resume">
-               <FileText className="w-8 h-8 text-white cursor-pointer" />
+                <Button variant="outline" className="flex items-center gap-2">
+                    <FileText className="w-5 h-5" />
+                    <span className="hidden sm:inline">Resume</span>
+                </Button>
             </Link>
-         </motion.div>
+            </motion.div>
       </>
    );
 }
