@@ -1,6 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const ScrambleText = ({ text, duration = 2000, delay = 100 }) => {
+interface ScrambleTextProps {
+    text: string;
+    duration?: number;
+    delay?: number;
+}
+
+const ScrambleText = ({
+    text,
+    duration = 2000,
+    delay = 100,
+}: ScrambleTextProps) => {
     const [scrambledText, setScrambledText] = useState("");
     const characters =
         "二 三 四 五 六 七 八 九 十 目 手 足 口 耳 体 車 学 生 休 月 火 水 木 金 土 日";

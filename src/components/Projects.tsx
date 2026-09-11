@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";

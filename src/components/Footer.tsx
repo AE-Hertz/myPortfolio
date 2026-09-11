@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
+import { useEffect, useState } from "react";
 import { SOCIAL_MEDIA_LINKS } from "../constants";
 import { motion } from "framer-motion";
 import AnimatedLetter from "./AnimatedLetters/AnimatedLetter";
